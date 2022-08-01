@@ -16,9 +16,22 @@ newImage('assets/pillar.png', 350, 100)
 newImage('assets/crate.png', 350, 100)
 newImage('assets/well.png', 500, 425) 
 
-function newItem(assets, left, bottom)
-    let image = newImage(assets, left, bottom)
 
-    image.addEventListener('dblclick', () => {
-        image.remove()
+function newItem(assets, left, bottom){
+    let item = document.createElement('img')
+    item.src = assets
+    item.style.position = 'fixed'
+    item.style.left = left + 'px'
+    item.style.bottom = bottom + 'px'
+    document.body.append(item)
+    
+    item.addEventListener('dblclick', function(){
+        item.remove()
     })
+}
+
+newItem('assets/sword.png', 500, 405)
+newItem('assets/sheild.png', 165, 185)
+newItem('assets/staff.png', 600, 100)
+
+
