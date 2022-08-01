@@ -15,3 +15,10 @@ newImage('assets/tree.png', 200, 300)
 newImage('assets/pillar.png', 350, 100)
 newImage('assets/crate.png', 350, 100)
 newImage('assets/well.png', 500, 425) 
+
+function newItem(assets, left, bottom)
+    let image = newImage(assets, left, bottom)
+
+    image.addEventListener('dblclick', () => {
+        image.remove()
+    })
