@@ -11,6 +11,8 @@ function move (image, left, bottom) {
     image.style.bottom = bottom + 'px'
 }
 
+let greenCharac
+
 
 function newItem(assets, left, bottom){
     let item = newImage(assets, left, bottom)
