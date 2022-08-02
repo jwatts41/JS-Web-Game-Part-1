@@ -12,20 +12,17 @@ function newImage(assets, left, bottom){
 
 
 function newItem(assets, left, bottom){
-    let item = document.createElement('img')
-    item.src = assets
-    item.style.position = 'fixed'
-    item.style.left = left + 'px'
-    item.style.bottom = bottom + 'px'
-    document.body.append(item)
-    
+    let item = newImage(assets, left, bottom)
     item.addEventListener('click', function(){
         item.remove()
+        let inventoryItem = document.createElement('img')
+        inventoryItem.src = assets
+        inventory.append(inventoryItem)
     })
 }
 
+let inventory = document.createElement('div')
 function newInventory(){
-    let inventory = document.createElement('div')
     inventory.style.position = 'fixed'
     inventory.style.bottom = '0px';
     inventory.style.left = '0px'
@@ -44,7 +41,6 @@ function move (image, left, bottom) {
     image.style.position = 'fixed'
     image.style.left = left + 'px'
     image.style.bottom = bottom + 'px'
-
 }
 
 function backdrop(assets, left, bottom, width, height) {
