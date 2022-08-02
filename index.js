@@ -19,12 +19,33 @@ function newItem(assets, left, bottom){
     item.style.bottom = bottom + 'px'
     document.body.append(item)
     
-    item.addEventListener('dblclick', function(){
+    item.addEventListener('click', function(){
         item.remove()
     })
 }
 
+function newInventory(){
+    let inventory = document.createElement('div')
+    inventory.style.position = 'fixed'
+    inventory.style.bottom = '0px';
+    inventory.style.left = '0px'
+    inventory.style.width = '100%'
+    inventory.style.height = '100px'
+    inventory.style.display = 'flex'
+    inventory.style.flexDirection = 'row'
+    inventory.style.alignItems = 'center'
+    inventory.style.justifyContent = 'space-evenly'
+    inventory.style.border = '2px solid black'
+    inventory.style.backgroundColor = 'brown'
+    document.body.append(inventory)
+}
 
+function move (image, left, bottom) {
+    image.style.position = 'fixed'
+    image.style.left = left + 'px'
+    image.style.bottom = bottom + 'px'
+
+}
 
 function backdrop(assets, left, bottom, width, height) {
     for(let i = 0; i < height; i++){
@@ -43,7 +64,7 @@ backdrop('assets/grass.png', 0, 0, window.innerWidth/100, heightOfGrass/100)
 
 
 
-
+newInventory()
 newImage('assets/green-character.gif', 100, 100)
 newImage('assets/pine-tree.png', 450, 200)
 newImage('assets/tree.png', 200, 300)
