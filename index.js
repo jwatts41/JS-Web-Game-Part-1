@@ -1,14 +1,15 @@
 function newImage(assets, left, bottom){
     let image = document.createElement('img')
     image.src = assets
-    image.style.position = 'fixed'
-    image.style.left = left + 'px'
-    image.style.bottom = bottom + 'px'
     document.body.append(image)
     return image
 }
 
-
+function move (image, left, bottom) {
+    image.style.position = 'fixed'
+    image.style.left = left + 'px'
+    image.style.bottom = bottom + 'px'
+}
 
 
 function newItem(assets, left, bottom){
@@ -37,11 +38,6 @@ function newInventory(){
     document.body.append(inventory)
 }
 
-function move (image, left, bottom) {
-    image.style.position = 'fixed'
-    image.style.left = left + 'px'
-    image.style.bottom = bottom + 'px'
-}
 
 function backdrop(assets, left, bottom, width, height) {
     for(let i = 0; i < height; i++){
