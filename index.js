@@ -5,7 +5,9 @@ function newImage(assets, left, bottom){
     return image
 }
 
-let greenCharacter = newImage('assets/green-character.gif')
+
+move(newImage('assets/green-character.gif')).to(100,250)
+
 
 function move (image) {
     image.style.position = 'fixed'
