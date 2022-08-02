@@ -5,13 +5,22 @@ function newImage(assets, left, bottom){
     return image
 }
 
-function move (image, left, bottom) {
+let greenCharacter = newImage('assets/green-character.gif')
+
+function move (image) {
     image.style.position = 'fixed'
-    image.style.left = left + 'px'
-    image.style.bottom = bottom + 'px'
+
+    function moveToCoordinates (left, bottom) {
+        image.style.left = left + 'px'
+        image.style.bottom = bottom + 'px'
+    }
+
+    return {
+        to: moveToCoordinates
+    }
 }
 
-let greenCharac
+
 
 
 function newItem(assets, left, bottom){
